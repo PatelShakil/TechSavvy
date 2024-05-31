@@ -72,8 +72,6 @@ dependencies {
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
 
-
-
     //navigation
     implementation (libs.androidx.navigation.runtime.ktx)
     implementation (libs.androidx.navigation.compose)
@@ -84,13 +82,13 @@ dependencies {
     kapt(libs.hilt.android.compiler)
     kapt(libs.androidx.hilt.compiler)
 
-
-//image loading library from url
+    //image loading library from url
     implementation(libs.coil.compose)
 
     //zoomable image
     implementation (libs.zoomable)
-// Paging Compose
+
+    // Paging Compose
     implementation (libs.accompanist.pager.indicators)
     implementation(libs.accompanist.pager)
 
@@ -103,7 +101,5 @@ dependencies {
     implementation (libs.firebase.storage.ktx)
     implementation (libs.firebase.messaging.ktx)
     implementation (libs.firebase.crashlytics.ktx)
-
-
 
 }

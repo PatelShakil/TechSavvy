@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "156050581844",
+    "firebase_url": "https://tech-savvy-solution-default-rtdb.firebaseio.com",
+    "project_id": "tech-savvy-solution",
+    "storage_bucket": "tech-savvy-solution.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:156050581844:android:880a034ae87a9b3433c0c1",
+        "android_client_info": {
+          "package_name": "com.shakilpatel.techsavvy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDJQhNHr94fJIpXqlJgIEBYMDUJU2rC19o"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
