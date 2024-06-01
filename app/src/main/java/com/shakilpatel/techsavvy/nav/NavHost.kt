@@ -1,5 +1,6 @@
 package com.shakilpatel.techsavvy.nav
 
+import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,6 +15,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.nav.navigations.AuthNav
+import com.shakilpatel.techsavvy.nav.navigations.DiscussionNav
 import com.shakilpatel.techsavvy.nav.navigations.HomeNav
 import com.shakilpatel.techsavvy.nav.navigations.ProfileNav
 
@@ -23,7 +25,7 @@ fun AppNavHost(modifier: Modifier = Modifier) {
     val navController = rememberNavController()
 
     Image(
-        painterResource(id = R.drawable.home_bg),
+        painterResource(id = R.drawable.home_bg_1),
         "",
         modifier= Modifier.fillMaxSize(),
         contentScale = ContentScale.Crop
@@ -43,9 +45,7 @@ fun AppNavHost(modifier: Modifier = Modifier) {
             AuthNav(navController = navController)
             HomeNav(navController)
             ProfileNav(navController)
+            DiscussionNav(navController)
         }
     }
-
-
-
 }
