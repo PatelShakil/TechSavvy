@@ -7,6 +7,12 @@ sealed class AppScreen(val title : String = "",val route : String){
         object Login : AppScreen("Login","login")
     }
 
+    object Home:AppScreen("Home","nav_home"){
+        object Landing:AppScreen("Landing","landing")
+    }
+    object Profile:AppScreen("Profile","nav_profile"){
+        object Landing:AppScreen("Landing","landing")
+    }
 
 
 }

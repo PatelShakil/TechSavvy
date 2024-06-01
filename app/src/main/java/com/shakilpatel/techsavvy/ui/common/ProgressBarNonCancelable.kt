@@ -1,0 +1,14 @@
+package com.shakilpatel.techsavvy.ui.common
+
+import androidx.compose.material3.CircularProgressIndicator
+import androidx.compose.runtime.Composable
+import androidx.compose.ui.window.Dialog
+
+@Composable
+fun ProgressBarNonCancelable() {
+    Dialog(
+        onDismissRequest = { /*TODO*/ },
+    ) {
+        CircularProgressIndicator()
+    }
+}
