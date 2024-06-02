@@ -24,7 +24,6 @@ class StudentRepository @Inject constructor(
     }
 
     fun getStudent(): Resource<StudentModel> {
-
         if(sharedPreferences.getString("phone",null) != null){
             return Resource.Success(StudentModel(
                 sharedPreferences.getString("uid", "") ?: "",
@@ -38,10 +37,14 @@ class StudentRepository @Inject constructor(
         }else{
             return Resource.Failure("No student found")
         }
-
-
-
     }
+
+
+    fun getStudentByKey(key:String) : String?{
+        return sharedPreferences.getString(key,null)
+    }
+
+
 
     fun updateStudent(student: StudentModel) {
         saveStudent(student)

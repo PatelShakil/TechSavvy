@@ -9,9 +9,10 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.shape.CircleShape
-import androidx.compose.material.MaterialTheme.colors
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.AccountCircle
+import androidx.compose.material.icons.filled.Info
+import androidx.compose.material3.AlertDialog
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -107,28 +108,50 @@ fun AppBar(navController: NavController) {
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ChatAppBar(title: String) {
+fun ChatAppBar(modifier: Modifier = Modifier, title: String, info: String = "") {
+    var isGroupInfo by remember {
+        mutableStateOf(false)
+    }
     TopAppBar(
+        modifier = modifier
+            .fillMaxWidth(),
         title = { Text(text = title) },
         navigationIcon = {
             Card(
                 modifier = Modifier.size(46.dp),
                 shape = CircleShape
-            ){
+            ) {
                 Box(
-                    modifier= Modifier.fillMaxSize(),
+                    modifier = Modifier.fillMaxSize(),
                     contentAlignment = Alignment.Center
-                    ) {
+                ) {
                     Text(
                         text = title.first().toString(),
                         style = MaterialTheme.typography.headlineLarge,
                         color = MaterialTheme.colorScheme.primary,
-                        modifier= Modifier.fillMaxSize().padding(top = 1.dp),
+                        modifier = Modifier
+                            .fillMaxSize()
+                            .padding(top = 1.dp),
                         textAlign = TextAlign.Center
                     )
                 }
             }
         },
+        actions = {
+            IconButton(onClick = { isGroupInfo = !isGroupInfo }) {
+                Icon(
+                    Icons.Default.Info,
+                    "",
+                    tint = MaterialTheme.colorScheme.primary,
+                )
+            }
+        },
         colors = TopAppBarDefaults.topAppBarColors(Color(0x6F454646))
     )
+
+    if(isGroupInfo){
+        AlertDialog(onDismissRequest = {isGroupInfo = false }, confirmButton = { /*TODO*/ },
+            title = { Text(text = title) },
+            text = { Text(text = info)})
+    }
 }

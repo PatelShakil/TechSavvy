@@ -65,7 +65,7 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                                 .padding(bottom = 20.dp)
                                 .padding(top = 20.dp),
                             onClick = {
-
+                                navController.navigate(AppScreen.Classes.route)
                             },
                             colors = CardDefaults.cardColors(Color(0x6F454646)),
                         ) {

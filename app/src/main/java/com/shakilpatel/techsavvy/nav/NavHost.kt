@@ -4,6 +4,7 @@ import androidx.activity.enableEdgeToEdge
 import androidx.compose.animation.AnimatedVisibility
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.imePadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.runtime.Composable
@@ -15,6 +16,7 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.rememberNavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.nav.navigations.AuthNav
+import com.shakilpatel.techsavvy.nav.navigations.ClassesNav
 import com.shakilpatel.techsavvy.nav.navigations.DiscussionNav
 import com.shakilpatel.techsavvy.nav.navigations.HomeNav
 import com.shakilpatel.techsavvy.nav.navigations.ProfileNav
@@ -27,7 +29,8 @@ fun AppNavHost(modifier: Modifier = Modifier) {
     Image(
         painterResource(id = R.drawable.home_bg_1),
         "",
-        modifier= Modifier.fillMaxSize(),
+        modifier= Modifier.fillMaxSize()
+            .imePadding(),
         contentScale = ContentScale.Crop
     )
     Scaffold(
@@ -46,6 +49,7 @@ fun AppNavHost(modifier: Modifier = Modifier) {
             HomeNav(navController)
             ProfileNav(navController)
             DiscussionNav(navController)
+            ClassesNav(navController)
         }
     }
 }
