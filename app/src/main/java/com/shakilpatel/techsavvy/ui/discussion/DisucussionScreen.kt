@@ -10,6 +10,7 @@ import android.speech.SpeechRecognizer
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.animation.AnimatedVisibility
+import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.focusable
 import androidx.compose.foundation.layout.Arrangement
@@ -53,16 +54,21 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.onFocusChanged
+import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Transparent
 import androidx.compose.ui.graphics.Color.Companion.White
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.platform.LocalView
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.data.models.MessageGDModel
@@ -75,10 +81,18 @@ import kotlin.random.Random
 
 @Composable
 fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavController) {
+    val focusManager = LocalFocusManager.current
+
     Box(
         modifier = Modifier.fillMaxWidth()
+            .clickable {
+                focusManager.clearFocus()
+            }
     ) {
         var msg by remember { mutableStateOf("") }
+        var isFocused by remember { mutableStateOf(false) }
+        val focusRequester = remember { FocusRequester() }
+
 
         Column(
             modifier = Modifier
@@ -146,6 +160,7 @@ fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavControlle
 
         Row(
             modifier = Modifier
+                .background(if(isFocused) MaterialTheme.colorScheme.surface else Transparent)
                 .padding(horizontal = 5.dp)
                 .fillMaxWidth()
                 .padding(vertical = 5.dp)
@@ -156,9 +171,9 @@ fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavControlle
         ) {
             Card(
                 modifier = Modifier.fillMaxWidth(),
-                elevation = CardDefaults.cardElevation(8.dp),
+                elevation = CardDefaults.cardElevation(12.dp),
                 shape = CircleShape,
-                colors = CardDefaults.cardColors(Transparent)
+                colors = CardDefaults.cardColors(Transparent),
             ) {
 
                 val context = LocalContext.current
@@ -184,7 +199,11 @@ fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavControlle
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .focusable(true),
+                        .focusable(true)
+                        .onFocusChanged {
+                            isFocused = it.hasFocus
+                        }
+                    ,
                     maxLines = 3,
                     placeholder = { Text("Enter Message") },
                     trailingIcon = {
@@ -327,19 +346,30 @@ fun MessageGDItem(message: MessageGDModel, phone: String) {
             Column(
                 modifier = Modifier
                     .widthIn(max = 200.dp)
-                    .padding(5.dp)
+                    .padding(if(isMe) 5.dp else 0.dp)
+                    .padding(horizontal = 5.dp)
             ) {
-                Text(
+                if(!isMe) {
+                    Text(
+                        message.user?.name ?: "",
+                        style = MaterialTheme.typography.titleSmall,
+                        color = MaterialTheme.colorScheme.primary,
+                        modifier= Modifier.padding(start = 5.dp),
+                        fontSize = 11.sp
+                    )
+                }
+                    Text(
                     text = message.message,
                     color = if (isMe) Black else White,
                     style = MaterialTheme.typography.titleSmall
                 )
-                Spacer(modifier = Modifier.height(5.dp))
+                Spacer(modifier = Modifier.height(2.dp))
                 Text(
                     text = timeAgo(message.timestamp, "hh:mma dd MMM yy"),
                     color = Color.Gray,
                     style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier.align(Alignment.End)
+                    modifier = Modifier.align(Alignment.End),
+                    fontSize = 10.sp
                 )
             }
         }
