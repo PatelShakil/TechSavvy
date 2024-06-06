@@ -9,5 +9,6 @@ data class ClassModel(
     val desc:String,
     val meet:String,
     val created :Long,
-    val date:String
-)
+){
+    constructor():this("","",0,0,"","","",0)
+}

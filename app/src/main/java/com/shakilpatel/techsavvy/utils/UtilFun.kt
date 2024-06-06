@@ -1,5 +1,7 @@
 package com.shakilpatel.techsavvy.utils
 
+import android.content.Context
+import android.content.Intent
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
@@ -29,4 +31,14 @@ fun getDateFromMillis(format: String, timestampMillis: Long): String {
     val desiredFormat = SimpleDateFormat(format, Locale.getDefault())
     desiredFormat.timeZone = TimeZone.getTimeZone("Asia/Kolkata")
     return desiredFormat.format(date)
+}
+
+fun Context.shareText(text: String) {
+    val sendIntent: Intent = Intent().apply {
+        action = Intent.ACTION_SEND
+        putExtra(Intent.EXTRA_TEXT, text)
+        type = "text/plain"
+    }
+    val shareIntent = Intent.createChooser(sendIntent, null)
+    startActivity(shareIntent)
 }

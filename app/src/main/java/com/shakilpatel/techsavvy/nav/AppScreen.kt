@@ -21,5 +21,8 @@ sealed class AppScreen(val title : String = "",val route : String){
         object Landing:AppScreen("Landing","landing")
     }
 
+    object Students : AppScreen("Students","nav_students"){
+        object Landing:AppScreen("Landing","landing")
+    }
 
 }

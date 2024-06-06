@@ -101,13 +101,13 @@ fun HomeScreen(viewModel: HomeViewModel, navController: NavController) {
                             if (it.result.gender == "Male") {
                                 item {
                                     HomeNavComp(R.drawable.img_boys, "Boys") {
-
+                                        navController.navigate(AppScreen.Students.route + "/Male")
                                     }
                                 }
                             } else {
                                 item {
                                     HomeNavComp(R.drawable.img_girls, "Girls") {
-
+                                        navController.navigate(AppScreen.Students.route + "/Female")
                                     }
                                 }
                             }

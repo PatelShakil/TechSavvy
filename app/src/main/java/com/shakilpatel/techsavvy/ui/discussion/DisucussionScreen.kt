@@ -55,6 +55,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
+import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
 import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.Color
@@ -199,7 +200,7 @@ fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavControlle
                     },
                     modifier = Modifier
                         .fillMaxWidth()
-                        .focusable(true)
+                        .focusRequester(focusRequester)
                         .onFocusChanged {
                             isFocused = it.hasFocus
                         }
@@ -234,7 +235,7 @@ fun DiscussionScreen(viewModel: DiscussionViewModel, navController: NavControlle
                             IconButton(
                                 onClick = {
                                     if (msg.isNotEmpty()) {
-                                        viewModel.sendMessage(msg)
+                                        viewModel.sendMessage(msg.trim())
                                         msg = ""
                                     }
                                     view.vibrate()

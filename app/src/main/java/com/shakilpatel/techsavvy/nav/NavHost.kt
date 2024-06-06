@@ -20,6 +20,7 @@ import com.shakilpatel.techsavvy.nav.navigations.ClassesNav
 import com.shakilpatel.techsavvy.nav.navigations.DiscussionNav
 import com.shakilpatel.techsavvy.nav.navigations.HomeNav
 import com.shakilpatel.techsavvy.nav.navigations.ProfileNav
+import com.shakilpatel.techsavvy.nav.navigations.StudentsNav
 
 @Composable
 fun AppNavHost(modifier: Modifier = Modifier) {
@@ -50,6 +51,7 @@ fun AppNavHost(modifier: Modifier = Modifier) {
             ProfileNav(navController)
             DiscussionNav(navController)
             ClassesNav(navController)
+            StudentsNav(navController)
         }
     }
 }
