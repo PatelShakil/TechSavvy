@@ -6,6 +6,7 @@ import androidx.activity.SystemBarStyle
 import androidx.activity.compose.setContent
 import androidx.activity.enableEdgeToEdge
 import com.shakilpatel.techsavvy.nav.AppNavHost
+import com.shakilpatel.techsavvy.ui.home.TechSavvyWebHome
 import com.shakilpatel.techsavvy.ui.theme.TechSavvyTheme
 import dagger.hilt.android.AndroidEntryPoint
 
@@ -16,7 +17,8 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             TechSavvyTheme {
-                AppNavHost()
+//                AppNavHost()
+            TechSavvyWebHome()
             }
         }
     }
