@@ -57,7 +57,6 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.focus.FocusRequester
 import androidx.compose.ui.focus.focusRequester
 import androidx.compose.ui.focus.onFocusChanged
-import androidx.compose.ui.focus.onFocusEvent
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.Color.Companion.Black
 import androidx.compose.ui.graphics.Color.Companion.Transparent
@@ -74,7 +73,7 @@ import androidx.navigation.NavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.data.models.MessageGDModel
 import com.shakilpatel.techsavvy.data.resources.Resource
-import com.shakilpatel.techsavvy.nav.ChatAppBar
+import com.shakilpatel.techsavvy.navigation.ChatAppBar
 import com.shakilpatel.techsavvy.utils.shimmerEffect
 import com.shakilpatel.techsavvy.utils.timeAgo
 import com.shakilpatel.techsavvy.utils.vibrate

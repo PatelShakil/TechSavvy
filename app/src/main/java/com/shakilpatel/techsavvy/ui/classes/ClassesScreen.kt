@@ -31,7 +31,6 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
-import androidx.compose.ui.Alignment.Companion.CenterHorizontally
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.ColorFilter
@@ -46,7 +45,7 @@ import androidx.navigation.NavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.data.models.ClassModel
 import com.shakilpatel.techsavvy.data.resources.Resource
-import com.shakilpatel.techsavvy.nav.ChatAppBar
+import com.shakilpatel.techsavvy.navigation.ChatAppBar
 import com.shakilpatel.techsavvy.utils.getDateFromMillis
 import com.shakilpatel.techsavvy.utils.shareText
 import com.shakilpatel.techsavvy.utils.shimmerEffect
@@ -160,14 +159,14 @@ fun ClassesItemCard(item: ClassModel) {
                             .size(35.dp),
                         shape = CircleShape
                     ) {
-                        Image(
-                            painterResource(id = R.drawable.img_classes),
-                            "",
-                            modifier = Modifier
-                                .fillMaxSize()
-                                .padding(5.dp),
-                            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
-                        )
+//                        Image(
+//                            painterResource(id = R.drawable.img_classes),
+//                            "",
+//                            modifier = Modifier
+//                                .fillMaxSize()
+//                                .padding(5.dp),
+//                            colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
+//                        )
                     }
                 }
                 Column(

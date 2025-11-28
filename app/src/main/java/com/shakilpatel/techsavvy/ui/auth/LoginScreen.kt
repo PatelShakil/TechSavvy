@@ -1,6 +1,5 @@
 package com.shakilpatel.techsavvy.ui.auth
 
-import android.widget.Toast
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -17,7 +16,6 @@ import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
-import androidx.compose.material3.CircularProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
@@ -32,19 +30,16 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.window.Dialog
 import androidx.navigation.NavController
 import com.shakilpatel.techsavvy.R
 import com.shakilpatel.techsavvy.data.resources.Resource
-import com.shakilpatel.techsavvy.nav.AppScreen
+import com.shakilpatel.techsavvy.navigation.AppScreen
 import com.shakilpatel.techsavvy.ui.common.ComposeToast
 import com.shakilpatel.techsavvy.ui.common.ProgressBarNonCancelable
-import com.shakilpatel.techsavvy.ui.theme.TechSavvyTheme
 
 @Composable
 fun LoginScreen(viewModel: AuthViewModel, navController: NavController) {
@@ -83,13 +78,13 @@ fun LoginScreen(viewModel: AuthViewModel, navController: NavController) {
                     modifier = Modifier.fillMaxWidth()
                 )
 
-                Text(
-                    "Note: Enter your phone no. and you're security pin which can provided by Tech Savvy Classes",
-                    style = MaterialTheme.typography.bodySmall,
-                    modifier = Modifier
-                        .padding(horizontal = 10.dp)
-                        .padding(bottom = 10.dp)
-                )
+//                Text(
+//                    "Note: Enter your phone no. and you're security pin which can provided by Tech Savvy Classes",
+//                    style = MaterialTheme.typography.bodySmall,
+//                    modifier = Modifier
+//                        .padding(horizontal = 10.dp)
+//                        .padding(bottom = 10.dp)
+//                )
 
 
                 OutlinedTextField(

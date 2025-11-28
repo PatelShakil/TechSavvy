@@ -17,8 +17,8 @@ val errorLight = Color(0xFF8E4953)
 val onErrorLight = Color(0xFFFFFFFF)
 val errorContainerLight = Color(0xFFFFD9DC)
 val onErrorContainerLight = Color(0xFF3B0713)
-val backgroundLight = Color(0xFFF6FBF4)
-val onBackgroundLight = Color(0xFF171D19)
+//val backgroundLight = Color(0xFFF6FBF4)
+//val onBackgroundLight = Color(0xFF171D19)
 val surfaceLight = Color(0xFFF6FBF4)
 val onSurfaceLight = Color(0xFF171D19)
 val surfaceVariantLight = Color(0xFFDCE5DC)
@@ -216,9 +216,46 @@ val surfaceContainerLowDarkHighContrast = Color(0xFF171D19)
 val surfaceContainerDarkHighContrast = Color(0xFF1B211D)
 val surfaceContainerHighDarkHighContrast = Color(0xFF262B27)
 val surfaceContainerHighestDarkHighContrast = Color(0xFF303632)
+//
+//
+//
 
 
 
+// Primary Colors
+val PrimaryBlue = Color(0xFF2563EB)
+val PrimaryBlueDark = Color(0xFF1E40AF)
+val PrimaryBlueLight = Color(0xFF3B82F6)
+
+// Secondary Colors
+val SecondaryPurple = Color(0xFF7C3AED)
+val SecondaryGreen = Color(0xFF10B981)
+val SecondaryOrange = Color(0xFFF59E0B)
+val SecondaryRed = Color(0xFFEF4444)
+
+// Background Colors
+val BackgroundLight = Color(0xFFF8FAFC)
+val BackgroundWhite = Color(0xFFFFFFFF)
+val BackgroundGray = Color(0xFFF1F5F9)
+
+// Text Colors
+val TextPrimary = Color(0xFF1E293B)
+val TextSecondary = Color(0xFF64748B)
+val TextTertiary = Color(0xFF94A3B8)
+
+// Border & Divider
+val BorderLight = Color(0xFFE2E8F0)
+val DividerColor = Color(0xFFCBD5E1)
+
+// Status Colors
+val StatusPending = Color(0xFFFBBF24)
+val StatusPaid = Color(0xFF10B981)
+val StatusActive = Color(0xFF3B82F6)
+val StatusSuspended = Color(0xFFEF4444)
+
+// Gradient Colors
+val GradientStart = Color(0xFF3B82F6)
+val GradientEnd = Color(0xFF8B5CF6)
 
 
 

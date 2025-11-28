@@ -19,19 +19,16 @@ import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.TextUnitType.Companion.Sp
 import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.shakilpatel.techsavvy.data.models.StudentModel
 import com.shakilpatel.techsavvy.data.resources.Resource
-import com.shakilpatel.techsavvy.nav.ChatAppBar
+import com.shakilpatel.techsavvy.navigation.ChatAppBar
 
 @Composable
 fun StudentsScreen(gender :String,viewModel: StudentsViewModel,navController: NavController) {

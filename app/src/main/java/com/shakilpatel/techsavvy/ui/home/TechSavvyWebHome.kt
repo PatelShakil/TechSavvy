@@ -91,17 +91,17 @@ fun WebViewScreen() {
                     fileChooserParams: FileChooserParams?
                 ): Boolean {
                     // Save the callback so it can be used when a file is selected.
-                    mainActivity.filePathCallback = filePathCallback
+//                    mainActivity.filePathCallback = filePathCallback
 
                     // Create the intent for the file chooser.
                     val intent = fileChooserParams?.createIntent()
                     try {
                         // Launch the file chooser using the Activity Result API.
                         if (intent != null) {
-                            mainActivity.fileChooserLauncher.launch(intent)
+//                            mainActivity.fileChooserLauncher.launch(intent)
                         }
                     } catch (e: ActivityNotFoundException) {
-                        mainActivity.filePathCallback = null
+//                        mainActivity.filePathCallback = null
                         return false
                     }
                     return true

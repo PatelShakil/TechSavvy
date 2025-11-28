@@ -1,25 +1,26 @@
 [versions]
-accompanistPager = "0.28.0"
-accompanistPagerIndicators = "0.13.0"
-agp = "8.5.2"
-coilCompose = "2.4.0"
+accompanistPager = "0.36.0"
+accompanistPagerIndicators = "0.36.0"
+agp = "8.13.1"
+coilCompose = "2.7.0"
 firebaseBom = "33.1.0"
-hiltAndroid = "2.49"
-hiltAndroidCompiler = "2.48.1"
-hiltAndroidGradlePlugin = "2.48.1"
-hiltNavigationCompose = "1.2.0"
-kotlin = "1.9.23"
-coreKtx = "1.13.1"
+hiltAndroid = "2.57.2"
+hiltAndroidCompiler = "2.57.2"
+hiltAndroidGradlePlugin = "2.57.2"
+hiltNavigationCompose = "1.3.0"
+kotlin = "2.2.21"
+coreKtx = "1.17.0"
 junit = "4.13.2"
-junitVersion = "1.1.5"
-espressoCore = "3.5.1"
-lifecycleRuntimeKtx = "2.8.1"
-activityCompose = "1.9.0"
-composeBom = "2024.05.00"
-navigationRuntimeKtx = "2.7.7"
-zoomable = "1.5.1"
-gs = "4.4.2"
-cl = "3.0.1"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+lifecycleRuntimeKtx = "2.10.0"
+activityCompose = "1.12.0"
+composeBom = "2025.11.01"
+navigationRuntimeKtx = "2.9.6"
+orgJetbrainsKotlinPluginComposeGradlePlugin = "2.2.21"
+zoomable = "2.9.0"
+gs = "4.4.4"
+cl = "3.0.6"
 
 [libraries]
 accompanist-pager = { module = "com.google.accompanist:accompanist-pager", version.ref = "accompanistPager" }
@@ -54,12 +55,15 @@ androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-toolin
 androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
+org-jetbrains-kotlin-plugin-compose-gradle-plugin = { module = "org.jetbrains.kotlin.plugin.compose:org.jetbrains.kotlin.plugin.compose.gradle.plugin", version.ref = "orgJetbrainsKotlinPluginComposeGradlePlugin" }
 zoomable = { module = "net.engawapg.lib:zoomable", version.ref = "zoomable" }
-
+androidx-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
 jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 google-services = { id = "com.google.gms.google-services", version.ref = "gs"}
 crashlytics = { id = "com.google.firebase.crashlytics", version.ref = "cl"}
+compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+org-jetbrains-kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 
